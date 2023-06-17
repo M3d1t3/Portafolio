@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css?9">
+    <link rel="stylesheet" href="css/estilos.css<?php echo '?' . date("YmdHis") ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet">
@@ -16,6 +16,10 @@
             }, function(){
                 $(this).find(".btn1").removeClass("hidden");
                 $(this).find(".btn2").removeClass("hidden2");
+            });
+
+            $('.sandwich').click(function() {
+                $(this).toggleClass('active');
             });
         });
     </script>
@@ -46,6 +50,13 @@
                 <div class="btnNav btnNav4">
                     <div class="btn1">Light version</div>
                     <div class="btn2">Light version</div>
+                </div>
+            </div>
+            <div id="menuToggle">
+                <div class="sandwich">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </nav> 
