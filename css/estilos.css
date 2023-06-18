@@ -193,6 +193,24 @@
   color: #58D68D;
 }
 
+/*Bloque contacto-----------------------------------*/
+#bloque_contacto{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  color: white;
+}
+
+
+/*Bloque proyectos-------------------------------------*/
+#bloque_proyectos{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  color:white;
+}
 
 /*Bloque cortina------------------------------------------*/
 #bloque_cortina{

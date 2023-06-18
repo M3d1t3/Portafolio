@@ -11,10 +11,17 @@
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <script>
         $(document).ready(function(){
+            //Cerrar ventanas iniciales
+            $("#bloque_proyectos").hide();
+            $("#bloque_contacto").hide();
+
             //Control del color de la pantalla
             let color = 0;
 
-            //Control del click en la pantalla para el cambio de cortin
+            //Control de la pagina seleccionada. Inicio=1, proyectos=2, contacto=3
+            let pagina = 1;
+
+            //Control del cambio de pantalla
             function cambiarCortina() {
                 if (interval) {
                 // Si hay un intervalo en ejecución, revertir el efecto
@@ -30,17 +37,70 @@
             cambiarCortina();
             $("#bloque_cortina").hide();
 
-            $(".btnNav").click(function(){
-                $("#bloque_cortina").show();
-                cambiarCortina();
-                setTimeout(function() {
+            //Control de click en los botones del menu
+            $(".btnProyectos").click(function(){
+                if(pagina!=2){
+                    $("#bloque_cortina").show();
                     cambiarCortina();
-                }, 500);
-                setTimeout(function() {
-                    $("#bloque_cortina").hide();
-                }, 2000); // Ajusta el tiempo según la duración del efecto de la cortina
+                    setTimeout(() => {
+                        $("#bloque_principal").hide();
+                        $("#bloque_contacto").hide();
+                        $("#bloque_proyectos").show();
+                    }, 500);
+                    setTimeout(function() {
+                        cambiarCortina();
+                    }, 500);
+                    setTimeout(function() {
+                        $("#bloque_cortina").hide();
+                    }, 2000);
+                }
+                pagina = 2;
+                $("#menuDesplegable").hide();
+                $("#navegador").removeClass('fondoNegro');
             });
 
+            $(".btnInicio").click(function(){
+                if(pagina!=1){
+                    $("#bloque_cortina").show();
+                    cambiarCortina();
+                    setTimeout(() => {
+                        $("#bloque_principal").show();
+                        $("#bloque_contacto").hide();
+                        $("#bloque_proyectos").hide();
+                    }, 500);
+                    setTimeout(function() {
+                        cambiarCortina();
+                    }, 500);
+                    setTimeout(function() {
+                        $("#bloque_cortina").hide();
+                    }, 2000);
+                }
+                pagina = 1;
+                $("#menuDesplegable").hide();
+                $("#navegador").removeClass('fondoNegro');
+            });
+            $(".btnContacto").click(function(){
+                if(pagina!=3){
+                    $("#bloque_cortina").show();
+                    cambiarCortina();
+                    setTimeout(() => {
+                        $("#bloque_principal").hide();
+                        $("#bloque_contacto").show();
+                        $("#bloque_proyectos").hide();
+                    }, 500);
+                    setTimeout(function() {
+                        cambiarCortina();
+                    }, 500);
+                    setTimeout(function() {
+                        $("#bloque_cortina").hide();
+                    }, 2000);
+                }
+                pagina = 3;
+                $("#menuDesplegable").hide();
+                $("#navegador").removeClass('fondoNegro');
+            });
+
+            //Control de el efecto hover en los botones de menu
             $(".btnNav").hover(function(){
                 $(this).find(".btn1").addClass("hidden");
                 $(this).find(".btn2").addClass("hidden2");
@@ -49,6 +109,7 @@
                 $(this).find(".btn2").removeClass("hidden2");
             });
 
+            //Control de click en el menu sandwich
             $('.sandwich').click(function() {
                 $(this).toggleClass('active');
                 $("#menuDesplegable").slideToggle();
@@ -61,7 +122,7 @@
 
 
 <body>
-        <!--Bloque principal donde se encuentra el contenido cambiante------------->
+        <!--Bloque principal de la portada------------->
         <div id="bloque_principal">
                 <div id="cuadrilatero">
                     <div id="foto">
@@ -75,28 +136,36 @@
                     <h1 id=textoMovil></h1>
                 </div>
         </div>
+        <!--Bloque de contacto------------------------------------->
+        <div id="bloque_contacto">
+            <h1>Esta es la pagina de contacto</h1>
+        </div>
+        <!--Bloque de proyectos--------------------------------------->
+        <div id="bloque_proyectos">
+            <h1>Esta es la pagina de proyectos</h1>
+        </div>
         <!--Bloque de navegacion---------------------------------------->
         <nav id="navegador">
             <div id="brandNav">
                 <h1><span id="nombre1">Diego  </span><span id="nombre2">Sánchez</span></h1>
             </div>
             <div id="menuNav">
-                <div class="btnNav btnNav1">
+                <div class="btnNav btnInicio">
                     <div class="btn1">Inicio</div>
                     <div class="btn2">Inicio</div>
                 </div>
                 
-                <div class="btnNav btnNav2">
+                <div class="btnNav btnProyectos">
                     <div class="btn1">Proyectos</div>
                     <div class="btn2">Proyectos</div>
                 </div>
                 
-                <div class="btnNav btnNav3">
+                <div class="btnNav btnContacto">
                     <div class="btn1">Contacto</div>
                     <div class="btn2">Contacto</div>
                 </div>
                 
-                <div class="btnNav btnNav4">
+                <div class="btnNav btnLight">
                     <div class="btn1">Light version</div>
                     <div class="btn2">Light version</div>
                 </div>
@@ -108,22 +177,22 @@
                     <span></span>
                 </div>
                 <div id="menuDesplegable">
-                    <div class="btnNav btnNav1" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
+                    <div class="btnNav btnInicio" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
                         <div class="btn1">Inicio</div>
                         <div class="btn2">Inicio</div>
                     </div>
                     
-                    <div class="btnNav btnNav2" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
+                    <div class="btnNav btnProyectos" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
                         <div class="btn1">Proyectos</div>
                         <div class="btn2">Proyectos</div>
                     </div>
                     
-                    <div class="btnNav btnNav3" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
+                    <div class="btnNav btnContacto" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
                         <div class="btn1">Contacto</div>
                         <div class="btn2">Contacto</div>
                     </div>
                     
-                    <div class="btnNav btnNav4" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
+                    <div class="btnNav btnLight" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
                         <div class="btn1">Light version</div>
                         <div class="btn2">Light version</div>
                     </div>
