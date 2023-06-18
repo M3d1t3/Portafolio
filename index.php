@@ -51,6 +51,8 @@
 
             $('.sandwich').click(function() {
                 $(this).toggleClass('active');
+                $("#menuDesplegable").slideToggle();
+                $("#navegador").toggleClass('fondoNegro');
             });
         });
     </script>
@@ -104,6 +106,27 @@
                     <span></span>
                     <span></span>
                     <span></span>
+                </div>
+                <div id="menuDesplegable">
+                    <div class="btnNav btnNav1" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
+                        <div class="btn1">Inicio</div>
+                        <div class="btn2">Inicio</div>
+                    </div>
+                    
+                    <div class="btnNav btnNav2" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
+                        <div class="btn1">Proyectos</div>
+                        <div class="btn2">Proyectos</div>
+                    </div>
+                    
+                    <div class="btnNav btnNav3" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
+                        <div class="btn1">Contacto</div>
+                        <div class="btn2">Contacto</div>
+                    </div>
+                    
+                    <div class="btnNav btnNav4" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
+                        <div class="btn1">Light version</div>
+                        <div class="btn2">Light version</div>
+                    </div>
                 </div>
             </div>
         </nav> 
