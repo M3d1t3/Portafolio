@@ -56,8 +56,10 @@
     </script>
     <title>Diego Sánchez - Portfolio</title>
 </head>
+
+
 <body>
-        
+        <!--Bloque principal donde se encuentra el contenido cambiante------------->
         <div id="bloque_principal">
                 <div id="cuadrilatero">
                     <div id="foto">
@@ -71,6 +73,7 @@
                     <h1 id=textoMovil></h1>
                 </div>
         </div>
+        <!--Bloque de navegacion---------------------------------------->
         <nav id="navegador">
             <div id="brandNav">
                 <h1><span id="nombre1">Diego  </span><span id="nombre2">Sánchez</span></h1>
@@ -104,6 +107,7 @@
                 </div>
             </div>
         </nav> 
+        <!--Bloque de la cortina que sobresale por encima de todo lo demás------------>
         <div id="bloque_cortina">
             <div class="cortina" id="cortina1"></div>
             <div class="cortina" id="cortina2"></div>
@@ -116,6 +120,10 @@
             <div class="cortina" id="cortina9"></div>
             <div class="cortina" id="cortina10"></div>
         </div>
+
+
+
+        
        <script>
         new TypeIt("#textoMovil", {
             speed: 65,
@@ -167,6 +175,7 @@
                 return interval; // Devuelve el identificador del intervalo
                 }
 
+                //Funcion que cambia la cortina de posicion
                 function revertirEfectoCortina() {
                 $(".hidden").each(function() {
                     $(this).removeClass("hidden");
