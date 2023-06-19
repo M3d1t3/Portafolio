@@ -263,6 +263,30 @@
 .fondoNegro{
   background-color: black;
 }
+
+
+
+/*Clases para el bloque de redes sociales*******************/
+#redesSociales {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  
+}
+
+#redesSociales a {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+#redesSociales a:hover {
+  color: #58D68D;
+}
+
 /*Media queries***********************************************/
 @media (max-width: 1200px){
   #menuNav {
@@ -288,6 +312,10 @@
   #cuadrado_movil{
     width: 100%;
     padding: 20px;
+  }
+
+  #redesSociales{
+    top:40%;
   }
 }
 
@@ -321,6 +349,9 @@
       font-size: 20px;
     }
 
+    #redesSociales{
+      top:30%;
+    }
 
 }
 

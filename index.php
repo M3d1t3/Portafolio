@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script src="https://kit.fontawesome.com/7316561214.js" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
             $("#body").addClass("fondoNegro");
@@ -148,6 +149,12 @@
         <!--Bloque de proyectos--------------------------------------->
         <div id="bloque_proyectos">
             <h1>Esta es la pagina de proyectos</h1>
+        </div>
+
+        <!--Bloque de redes sociales de la derecha---------------------->
+        <div id="redesSociales">
+            <a href="https://github.com/M3D1T3" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/diego-sánchez-pomares-080b75146" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
         <!--Bloque de navegacion---------------------------------------->
         <nav id="navegador">
