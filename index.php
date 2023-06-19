@@ -11,6 +11,7 @@
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <script>
         $(document).ready(function(){
+            $("#body").addClass("fondoNegro");
             //Cerrar ventanas iniciales
             $("#bloque_proyectos").hide();
             $("#bloque_contacto").hide();
@@ -100,6 +101,10 @@
                 $("#navegador").removeClass('fondoNegro');
             });
 
+            $(".btnLight").click(function(){
+                cambiarColor();
+            });
+
             //Control de el efecto hover en los botones de menu
             $(".btnNav").hover(function(){
                 $(this).find(".btn1").addClass("hidden");
@@ -121,7 +126,7 @@
 </head>
 
 
-<body>
+<body id="body">
         <!--Bloque principal de la portada------------->
         <div id="bloque_principal">
                 <div id="cuadrilatero">
@@ -166,8 +171,8 @@
                 </div>
                 
                 <div class="btnNav btnLight">
-                    <div class="btn1">Light version</div>
-                    <div class="btn2">Light version</div>
+                    <div class="btn1"><span>Light version</span></div>
+                    <div class="btn2"><span>Light version</span></div>
                 </div>
             </div>
             <div id="menuToggle">
@@ -281,6 +286,27 @@
                 }
 
                 let interval = null;
+
+                /*Funcion de cambio de color de la pagina***********************/
+                function cambiarColor(){
+                    alert("Funciona");
+
+                    if(color==0){
+                        //Cambiamos a light version
+                        $("#body").removeClass("fondoNegro");
+                        $("#body").addClass("fondoBlanco");
+
+
+                        color = 1
+                    }else{
+                        //Cambiamos a dark version
+                        $("#body").removeClass("fondoBlanco");
+                        $("#body").addClass("fondoNegro");
+
+
+                        color = 0;
+                    }
+                }
        </script> 
 </body>
 </html>

@@ -4,9 +4,7 @@
     box-sizing: border-box;
   }
 
-  body{
-    background-color: black;
-  }
+
 
   #navegador {
     display: flex;
@@ -254,10 +252,18 @@
   text-align: center;
 }
 
+
+
+
+/*Clases para el cambio de color*****************************/
+.fondoBlanco{
+  background-color: white;
+}
+
 .fondoNegro{
   background-color: black;
 }
-
+/*Media queries***********************************************/
 @media (max-width: 1200px){
   #menuNav {
     display: none;
