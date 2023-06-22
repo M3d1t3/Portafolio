@@ -20,6 +20,42 @@
             //Control del color de la pantalla
             let color = 0;
 
+            //Añadir color al navegador cuando no se está en inicio
+            function addColorNav(){
+                    if(color==0){
+                        $("#navegador").addClass("fondoNegro");
+                    }else{
+                        $("#navegador").addClass("fondoBlanco");
+                    }
+                }
+            function removeColorNav(){
+                if(color==0){
+                        $("#navegador").removeClass("fondoNegro");
+                    }else{
+                        $("#navegador").removeClass("fondoBlanco");
+                    }
+            }
+
+
+            /*Funcion para cambiar el color de todos los elementos
+            function cambiarColor(){
+                if(color==0){
+                    $('body').css('backgroundColor', 'white');
+                    $("#nombre2").css("color","black");
+                    $(".btn1").css("color","black");
+                    $(".btn2").css("color","black");
+                    $('.sandwich span').css('backgroundColor', 'black');
+                    $("#textoFijo").css("color","black");
+                    $("#textoMovil").css("color","black");
+                    $('#imagenMia').attr('src', 'TUMA2.jpg');
+                    $("#light").text("Dark version");
+                    $("#light2").text("Dark version");
+
+                }
+            }*/
+
+           
+
             //Control de la pagina seleccionada. Inicio=1, proyectos=2, contacto=3
             let pagina = 1;
 
@@ -48,6 +84,8 @@
                         $("#bloque_principal").hide();
                         $("#bloque_contacto").hide();
                         $("#bloque_proyectos").show();
+                        $("#redesSociales").show();
+                        addColorNav();
                     }, 500);
                     setTimeout(function() {
                         cambiarCortina();
@@ -69,6 +107,7 @@
                         $("#bloque_principal").show();
                         $("#bloque_contacto").hide();
                         $("#bloque_proyectos").hide();
+                        $("#redesSociales").show();
                     }, 500);
                     setTimeout(function() {
                         cambiarCortina();
@@ -89,6 +128,8 @@
                         $("#bloque_principal").hide();
                         $("#bloque_contacto").show();
                         $("#bloque_proyectos").hide();
+                        $("#redesSociales").hide();
+                        addColorNav();
                     }, 500);
                     setTimeout(function() {
                         cambiarCortina();
@@ -132,7 +173,7 @@
         <div id="bloque_principal">
                 <div id="cuadrilatero">
                     <div id="foto">
-                        <img src="TUMA.jpg" alt="">
+                        <img id="imagenMia" src="TUMA.jpg" alt="">
                     </div>
                 </div>
                 <div id="cuadrado_fijo">
@@ -144,8 +185,8 @@
         </div>
         <!--Bloque de contacto------------------------------------->
         <div id="bloque_contacto">
-            <div id="contacto_info">
-                <div id="titulo_info">
+            <div class="clearfix" id="contacto_info">
+                <div class="titulo_info">
                     <h1>Información de contacto</h1>
                 </div>
                 <div id="bloque_whatsapp" class="info">
@@ -164,11 +205,20 @@
                             <i class="far fa-envelope"></i>
                         </a>
                     </div>
+                    <div class="info_contenido">
+                        <h1 href="mailto:sanchezpomares1306@gmail.com">sanchezpomares1306@gmail.com</h1>
+                    </div>
                 </div>
             </div>
-            <div id="contacto_form">
-
-            </div>
+            <form action="" id="contacto_form">
+                <div class="titulo_info">
+                    <h1>Formulario de contacto</h1>
+                </div>
+                <input class="form" type="text" placeholder="Nombre">
+                <input class="form" type="text" placeholder="Email">
+                <textarea class="form" name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                <button>Enviar mensaje</button>
+            </form>
         </div>
         <!--Bloque de proyectos--------------------------------------->
         <div id="bloque_proyectos">
@@ -179,6 +229,8 @@
         <div id="redesSociales">
             <a href="https://github.com/M3D1T3" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://linkedin.com/in/diego-sánchez-pomares-080b75146" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:tucorreo@example.com" target="_blank" rel="noopener noreferrer"><i class="far fa-envelope"></i></a>
+            <a href="https://wa.me/622055278" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
         </div>
         <!--Bloque de navegacion---------------------------------------->
         <nav id="navegador">
@@ -202,8 +254,8 @@
                 </div>
                 
                 <div class="btnNav btnLight">
-                    <div class="btn1"><span>Light version</span></div>
-                    <div class="btn2"><span>Light version</span></div>
+                    <div class="btn1"><span id="light">Light version</span></div>
+                    <div class="btn2"><span id="light2">Light version</span></div>
                 </div>
             </div>
             <div id="menuToggle">
@@ -338,6 +390,8 @@
                         color = 0;
                     }
                 }
+
+                
        </script> 
 </body>
 </html>
