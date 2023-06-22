@@ -144,7 +144,31 @@
         </div>
         <!--Bloque de contacto------------------------------------->
         <div id="bloque_contacto">
-            <h1>Esta es la pagina de contacto</h1>
+            <div id="contacto_info">
+                <div id="titulo_info">
+                    <h1>Información de contacto</h1>
+                </div>
+                <div id="bloque_whatsapp" class="info">
+                    <div class="logo">
+                        <a href="https://wa.me/622055278" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <div class="info_contenido">
+                        <h1>+34 622055278</h1>
+                    </div>
+                </div>
+                <div id="bloque_mail" class="info">
+                    <div class="logo">
+                        <a href="mailto:sanchezpomares1306@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="contacto_form">
+
+            </div>
         </div>
         <!--Bloque de proyectos--------------------------------------->
         <div id="bloque_proyectos">
