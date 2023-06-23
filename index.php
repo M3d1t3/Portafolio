@@ -16,6 +16,7 @@
             //Cerrar ventanas iniciales
             $("#bloque_proyectos").hide();
             $("#bloque_contacto").hide();
+            $("#bloque_resumen").hide();
 
             //Control del color de la pantalla
             let color = 0;
@@ -37,22 +38,6 @@
             }
 
 
-            /*Funcion para cambiar el color de todos los elementos
-            function cambiarColor(){
-                if(color==0){
-                    $('body').css('backgroundColor', 'white');
-                    $("#nombre2").css("color","black");
-                    $(".btn1").css("color","black");
-                    $(".btn2").css("color","black");
-                    $('.sandwich span').css('backgroundColor', 'black');
-                    $("#textoFijo").css("color","black");
-                    $("#textoMovil").css("color","black");
-                    $('#imagenMia').attr('src', 'TUMA2.jpg');
-                    $("#light").text("Dark version");
-                    $("#light2").text("Dark version");
-
-                }
-            }*/
 
            
 
@@ -85,6 +70,7 @@
                         $("#bloque_contacto").hide();
                         $("#bloque_proyectos").show();
                         $("#redesSociales").show();
+                        $("#bloque_resumen").hide();
                         addColorNav();
                     }, 500);
                     setTimeout(function() {
@@ -108,6 +94,7 @@
                         $("#bloque_contacto").hide();
                         $("#bloque_proyectos").hide();
                         $("#redesSociales").show();
+                        $("#bloque_resumen").hide();
                     }, 500);
                     setTimeout(function() {
                         cambiarCortina();
@@ -129,6 +116,7 @@
                         $("#bloque_contacto").show();
                         $("#bloque_proyectos").hide();
                         $("#redesSociales").hide();
+                        $("#bloque_resumen").hide();
                         addColorNav();
                     }, 500);
                     setTimeout(function() {
@@ -142,10 +130,32 @@
                 $("#menuDesplegable").hide();
                 $("#navegador").removeClass('fondoNegro');
             });
-
             $(".btnLight").click(function(){
-                cambiarColor();
+                if(pagina!=4){
+                    $("#bloque_cortina").show();
+                    cambiarCortina();
+                    setTimeout(() => {
+                        $("#bloque_principal").hide();
+                        $("#bloque_contacto").hide();
+                        $("#bloque_proyectos").hide();
+                        $("#redesSociales").show();
+                        $("#bloque_resumen").show();
+                        addColorNav();
+                    }, 500);
+                    setTimeout(function() {
+                        cambiarCortina();
+                    }, 500);
+                    setTimeout(function() {
+                        $("#bloque_cortina").hide();
+                    }, 2000);
+                }
+                pagina = 4;
+                $("#menuDesplegable").hide();
+                $("#navegador").removeClass('fondoNegro');
             });
+
+            
+
 
             //Control de el efecto hover en los botones de menu
             $(".btnNav").hover(function(){
@@ -224,6 +234,10 @@
         <div id="bloque_proyectos">
             <h1>Esta es la pagina de proyectos</h1>
         </div>
+        <!--Bloque de resumen de conocimientos--------------------------->
+        <div id="bloque_resumen">
+            <h1 style="color:white">Pagina resumen</h1>
+        </div>
 
         <!--Bloque de redes sociales de la derecha---------------------->
         <div id="redesSociales">
@@ -248,15 +262,17 @@
                     <div class="btn2">Proyectos</div>
                 </div>
                 
+                <div class="btnNav btnLight">
+                    <div class="btn1"><span id="light">Resumen</span></div>
+                    <div class="btn2"><span id="light2">Resumen</span></div>
+                </div>
+
                 <div class="btnNav btnContacto">
                     <div class="btn1">Contacto</div>
                     <div class="btn2">Contacto</div>
                 </div>
                 
-                <div class="btnNav btnLight">
-                    <div class="btn1"><span id="light">Light version</span></div>
-                    <div class="btn2"><span id="light2">Light version</span></div>
-                </div>
+                
             </div>
             <div id="menuToggle">
                 <div class="sandwich">
