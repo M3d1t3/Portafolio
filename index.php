@@ -151,7 +151,7 @@
                 }
                 pagina = 4;
                 $("#menuDesplegable").hide();
-                $("#navegador").removeClass('fondoNegro');
+                cargarBarras();
             });
 
             
@@ -172,6 +172,15 @@
                 $("#menuDesplegable").slideToggle();
                 $("#navegador").toggleClass('fondoNegro');
             });
+
+            /*Control de las barras de progreso de resumen*/
+            function cargarBarras(){
+                $("#barraHtml").animate({ width: '95%' }, 4000);
+                $("#barraJs").animate({ width: '75%' }, 4000);
+                $("#barraJquery").animate({ width: '90%' }, 4000);
+                $("#barraAjax").animate({ width: '90%' }, 4000);
+                $("#barraPhp").animate({ width: '90%' }, 4000);
+            }
         });
     </script>
     <title>Diego Sánchez - Portfolio</title>
@@ -236,7 +245,38 @@
         </div>
         <!--Bloque de resumen de conocimientos--------------------------->
         <div id="bloque_resumen">
-            <h1 style="color:white">Pagina resumen</h1>
+            <div id="contenedor_resumen">
+                <div class="resumen">
+                    <img src="html.png" alt="">
+                    <div class="porcentaje">
+                        <div id="barraHtml" class="barra"></div>
+                    </div>
+                </div>
+                <div class="resumen">
+                    <img src="js.png" alt="">
+                    <div class="porcentaje">
+                        <div id="barraJs" class="barra"></div>
+                    </div>
+                </div>
+                <div class="resumen">
+                    <img src="jquery.png" alt="">
+                    <div class="porcentaje">
+                        <div id="barraJquery" class="barra"></div>
+                    </div>
+                </div>
+                <div class="resumen">
+                    <img src="ajax.png" alt="">
+                    <div class="porcentaje">
+                        <div id="barraAjax" class="barra"></div>
+                    </div>
+                </div>
+                <div class="resumen">
+                    <img src="php.jpg" alt="">
+                    <div class="porcentaje">
+                        <div id="barraPhp" class="barra"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!--Bloque de redes sociales de la derecha---------------------->
@@ -290,16 +330,18 @@
                         <div class="btn1">Proyectos</div>
                         <div class="btn2">Proyectos</div>
                     </div>
+
+                    <div class="btnNav btnLight" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
+                        <div class="btn1">Resumen</div>
+                        <div class="btn2">Resumen</div>
+                    </div>
                     
                     <div class="btnNav btnContacto" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
                         <div class="btn1">Contacto</div>
                         <div class="btn2">Contacto</div>
                     </div>
                     
-                    <div class="btnNav btnLight" style="margin-left:auto;margin-right:auto;border-bottom:1px solid grey; padding:3px">
-                        <div class="btn1">Light version</div>
-                        <div class="btn2">Light version</div>
-                    </div>
+                    
                 </div>
             </div>
         </nav> 
