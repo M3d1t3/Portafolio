@@ -179,7 +179,13 @@
                 $("#barraJs").animate({ width: '75%' }, 4000);
                 $("#barraJquery").animate({ width: '90%' }, 4000);
                 $("#barraAjax").animate({ width: '90%' }, 4000);
-                $("#barraPhp").animate({ width: '90%' }, 4000);
+                $("#barraPhp").animate({ width: '75%' }, 4000);
+                $("#barraCss").animate({ width: '90%' }, 4000);
+                $("#barraMysql").animate({ width: '90%' }, 4000);
+                $("#barraBoot").animate({ width: '70%' }, 4000);
+                $("#barraGithub").animate({ width: '80%' }, 4000);
+                $("#barraNpm").animate({ width: '85%' }, 4000);
+                $("#barraNode").animate({ width: '50%' }, 4000);
             }
         });
     </script>
@@ -274,6 +280,36 @@
                     <img src="php.jpg" alt="">
                     <div class="porcentaje">
                         <div id="barraPhp" class="barra"></div>
+                    </div>
+                </div>
+                <div class="resumen">
+                    <img src="css3.png" alt="">
+                    <div class="porcentaje">
+                        <div id="barraCss" class="barra"></div>
+                    </div>
+                </div>
+                <div class="resumen">
+                    <img src="mysql.jpg" alt="">
+                    <div class="porcentaje">
+                        <div id="barraMysql" class="barra"></div>
+                    </div>
+                </div>
+                <div class="resumen">
+                    <img src="bootstrap.png" alt="">
+                    <div class="porcentaje">
+                        <div id="barraBoot" class="barra"></div>
+                    </div>
+                </div>
+                <div class="resumen">
+                    <img src="github.png" alt="">
+                    <div class="porcentaje">
+                        <div id="barraGithub" class="barra"></div>
+                    </div>
+                </div>
+                <div class="resumen">
+                    <img src="node.png" alt="">
+                    <div class="porcentaje">
+                        <div id="barraNode" class="barra"></div>
                     </div>
                 </div>
             </div>

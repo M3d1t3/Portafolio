@@ -336,6 +336,8 @@
   position: fixed;
   top:0;
   padding-top: 200px;
+  overflow-y: auto;
+  max-height: 100vh;
 }
 
 #contenedor_resumen {
@@ -359,12 +361,14 @@
   align-items: center;
   justify-content: center;
   padding: 20px 0;
+ border-bottom: 1px solid grey;
 }
 
 .resumen img{
   max-width: 40%;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 10px;
 }
 
 .porcentaje {
@@ -498,6 +502,12 @@
   #contacto_form{
     max-width: 90%;
   }
+  #contenedor_resumen{
+    max-width: 95%;
+  }
+  .resumen{
+    max-width: 45%;
+  }
 }
 
 @media (max-width: 800px) {
@@ -556,6 +566,13 @@
     }
 
     #contacto_form{
+      max-width: 90%;
+    }
+
+    #contenedor_resumen{
+      max-width: 95%;
+    }
+    .resumen{
       max-width: 90%;
     }
 }
