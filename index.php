@@ -10,6 +10,8 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <script src="https://kit.fontawesome.com/7316561214.js" crossorigin="anonymous"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
     <script>
         $(document).ready(function(){
             $("#body").addClass("fondoNegro");
@@ -37,9 +39,6 @@
                     }
             }
 
-
-
-           
 
             //Control de la pagina seleccionada. Inicio=1, proyectos=2, contacto=3
             let pagina = 1;
@@ -134,6 +133,7 @@
             $(".btnLight").click(function(){
                 if(pagina!=4){
                     $("#bloque_cortina").show();
+                    reiniciarBarras();
                     cambiarCortina();
                     setTimeout(() => {
                         $("#bloque_principal").hide();
@@ -189,9 +189,26 @@
                 $("#barraNode").animate({ width: '50%' }, 4000);
             }
 
+            function reiniciarBarras(){
+                $("#barraHtml").css('width','0%');
+                $("#barraJs").css('width','0%');
+                $("#barraJquery").css('width','0%');
+                $("#barraAjax").css('width','0%');
+                $("#barraPhp").css('width','0%');
+                $("#barraCss").css('width','0%');
+                $("#barraMysql").css('width','0%');
+                $("#barraBoot").css('width','0%');
+                $("#barraGithub").css('width','0%');
+                $("#barraNpm").css('width','0%');
+                $("#barraNode").css('width','0%');
+            }
 
             /*Controles de video*/
             function iniciarVideos(){
+                //Parar videos
+                $("#video1")[0].currentTime = 0;
+                $("#video2")[0].currentTime = 0;
+                //Iniciar videos
                 $("#video1")[0].play();
                 $("#video2")[0].play();
             }
@@ -201,6 +218,43 @@
             });
             $("#video2").click(function(){
                 location.href = 'https://www.diegosanchez.digital/escalon';
+            });
+
+
+            //Enviar correo con el formulario
+            $("#btnCorreo").click(function(event){
+                event.preventDefault();
+                let nombre = $("#nombreCorreo").val();
+                let correo = $("#mailCorreo").val();
+                let mensajeCorreo = $("#mensajeCorreo").val();
+
+                if (nombre !== '' && correo !== '' && mensajeCorreo !== '') {
+                // Envía una solicitud AJAX al archivo enviarCorreo.php
+                $.ajax({
+                    url: 'enviarCorreo.php',
+                    method: 'POST',
+                    data: {
+                        nombre: nombre,
+                        correo: correo,
+                        mensaje: mensajeCorreo
+                    },
+                    success: function(response) {
+                        // Maneja la respuesta del servidor
+                        $("#nombreCorreo").val("");
+                        $("#mailCorreo").val("");
+                        $("#mensajeCorreo").val("");
+                        Swal.fire('Mensaje enviado correctamente');
+                    },
+                    error: function(xhr, status, error) {
+                        // Maneja los errores de la solicitud AJAX
+                        Swal.fire('Hay un error en el envío del mensaje');
+                    }
+                });
+                } else {
+                    // Muestra un mensaje de error o realiza alguna otra acción
+                    console.log('Por favor completa todos los campos');
+                    Swal.fire('Todos los campos son obligatorios');
+                }
             });
         });
     </script>
@@ -254,10 +308,10 @@
                 <div class="titulo_info">
                     <h1>Formulario de contacto</h1>
                 </div>
-                <input class="form" type="text" placeholder="Nombre">
-                <input class="form" type="text" placeholder="Email">
-                <textarea class="form" name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                <button>Enviar mensaje</button>
+                <input id="nombreCorreo" class="form" type="text" placeholder="Nombre">
+                <input id="mailCorreo" class="form" type="text" placeholder="Email">
+                <textarea class="form" name="" id="mensajeCorreo" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                <button id="btnCorreo">Enviar mensaje</button>
             </form>
         </div>
         <!--Bloque de proyectos--------------------------------------->

@@ -326,6 +326,8 @@
   position: fixed;
   top:0;
   padding-top: 200px;
+  overflow-y: auto;
+  max-height: 100vh;
 }
 
 #contenedor_proyectos {
