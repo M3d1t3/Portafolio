@@ -325,7 +325,46 @@
   height: 100vh;
   position: fixed;
   top:0;
-  padding-top: 100px;
+  padding-top: 200px;
+}
+
+#contenedor_proyectos {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 70%;
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.proyecto {
+  min-width: 45%;
+  max-width: 45%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  text-align: center;
+
+}
+
+.proyecto video{
+  width: 100%;
+  cursor: pointer;
+}
+
+.proyecto h1{
+  color: white;
+  font-family: 'Diphylleia', serif;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.proyecto i{
+  color: white;
+  font-size: 30px;
+  margin-top: 10px;
 }
 
 
@@ -401,7 +440,7 @@
 .cortina {
   flex: 0 0 18%;
   height: 100%;
-  background-color: rgb(22, 22, 22);
+  background-color: #00918E;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -448,7 +487,7 @@
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  
+  margin-right: 30px;
 }
 
 #redesSociales a {
@@ -508,6 +547,10 @@
   .resumen{
     max-width: 45%;
   }
+
+  #contenedor_proyectos{
+    max-width: 90%;
+  }
 }
 
 @media (max-width: 800px) {
@@ -545,7 +588,7 @@
     }
 
     #redesSociales{
-      top:30%;
+      top:40%;
     }
 
     #contacto_info{
@@ -573,6 +616,22 @@
       max-width: 95%;
     }
     .resumen{
+      max-width: 90%;
+    }
+
+    #contenedor_proyectos{
+      width: 90%;
+    }
+
+    .proyecto{
+      min-width: 100%;
+      max-width: 100%;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 30px;
+    }
+
+    .proyecto video{
       max-width: 90%;
     }
 }

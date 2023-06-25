@@ -83,6 +83,7 @@
                 pagina = 2;
                 $("#menuDesplegable").hide();
                 $("#navegador").removeClass('fondoNegro');
+                iniciarVideos();
             });
 
             $(".btnInicio").click(function(){
@@ -187,6 +188,20 @@
                 $("#barraNpm").animate({ width: '85%' }, 4000);
                 $("#barraNode").animate({ width: '50%' }, 4000);
             }
+
+
+            /*Controles de video*/
+            function iniciarVideos(){
+                $("#video1")[0].play();
+                $("#video2")[0].play();
+            }
+
+            $("#video1").click(function(){
+                location.href = 'https://www.diegosanchez.digital/social';
+            });
+            $("#video2").click(function(){
+                location.href = 'https://www.diegosanchez.digital/escalon';
+            });
         });
     </script>
     <title>Diego Sánchez - Portfolio</title>
@@ -247,7 +262,20 @@
         </div>
         <!--Bloque de proyectos--------------------------------------->
         <div id="bloque_proyectos">
-            <h1>Esta es la pagina de proyectos</h1>
+            <div id="contenedor_proyectos">
+                <div class="proyecto">
+                    <video id="video1" src="videoSocial.mkv"></video>
+                    <div class="tituloProyecto">
+                        <h1>Red social</h1><a href="https://github.com/M3D1T3/Social" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <video id="video2" src="videoEscalon.mkv"></video>
+                    <div class="tituloProyecto">
+                        <h1>Gestión de vehículos</h1><a href="https://github.com/M3D1T3/escalon" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
         <!--Bloque de resumen de conocimientos--------------------------->
         <div id="bloque_resumen">
